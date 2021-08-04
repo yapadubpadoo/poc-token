@@ -14,8 +14,8 @@ const main = async () => {
         data
     }, `${secret}-${dynamicSecret}`, { algorithm: 'HS256' });
     console.log("Token:", token)
-    console.log('Decoded', jwt.verify(token, `${secret}-${dynamicSecret}`));
-    console.log('Decoded', jwt.verify(token, `${secret}`));
+    console.log('Decoded', jwt.verify(token, `${secret}-${dynamicSecret}`)); // this will be OK
+    console.log('Decoded', jwt.verify(token, `${secret}`)); // Error
 }
 
 main()
