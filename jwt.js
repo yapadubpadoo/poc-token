@@ -19,7 +19,7 @@ const main = async () => {
 
     console.log(token)
     for(let i = 1; i<100; i++) {
-        const decoded = jwt.verify(token, secret);
+        const decoded = jwt.verify(token, secret); // It will expire after 10 seconds and error
         const now = new Date()
         const tokenExpire = new Date(decoded.exp * 1000)
         console.log(now, tokenExpire, now >= tokenExpire, decoded)
